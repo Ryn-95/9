@@ -1,0 +1,1 @@
+export function Footer() { return <footer className="p-4 text-center">© 2024 9 Secondes</footer>; }

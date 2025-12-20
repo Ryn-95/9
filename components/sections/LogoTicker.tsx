@@ -1,0 +1,1 @@
+export function LogoTicker() { return null; }
