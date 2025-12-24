@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { Send, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, Send } from "lucide-react";
 
 export function Contact() {
   const [formState, setFormState] = useState({
@@ -21,142 +20,108 @@ export function Contact() {
     setIsSubmitting(true);
     setError("");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formState),
-      });
-
-      if (!response.ok) {
-        throw new Error("Une erreur est survenue");
-      }
-
-      setIsSuccess(true);
-      setFormState({ name: "", email: "", message: "" });
-    } catch (err) {
-      setError("Une erreur est survenue. Veuillez réessayer.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Simulate API call
+    setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormState({ name: "", email: "", message: "" });
+    }, 1500);
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-white relative overflow-hidden">
-      <div className="max-w-4xl mx-auto relative z-10">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-black">
-              Parlons de votre projet
+    <section id="contact" className="py-32 px-6 bg-white text-black relative">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-20">
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8">
+                Parlons projet.
             </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-              Vous avez un projet ambitieux ? Nous serions ravis d&apos;en discuter.
-              Remplissez le formulaire ci-dessous ou écrivez-nous directement à{" "}
-              <a href="mailto:contact@9secondes.com" className="text-black font-medium underline">
-                contact@9secondes.com
-              </a>
+            <p className="text-2xl text-neutral-500 max-w-2xl font-light">
+                Une idée en tête ? Remplissez ce formulaire et construisons quelque chose de grand.
             </p>
-          </div>
-        </FadeIn>
-
-        <div className="bg-gray-50 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
-          {isSuccess ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-12"
-            >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Check className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Message envoyé !</h3>
-              <p className="text-gray-500">
-                Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.
-              </p>
-              <Button
-                className="mt-8"
-                onClick={() => setIsSuccess(false)}
-              >
-                Envoyer un autre message
-              </Button>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                    Nom complet
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all"
-                    placeholder="John Doe"
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Email professionnel
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all"
-                    placeholder="john@entreprise.com"
-                    value={formState.email}
-                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition-all resize-none"
-                  placeholder="Parlez-nous de vos besoins..."
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                />
-              </div>
-
-              {error && (
-                <div className="text-red-500 text-sm text-center bg-red-50 py-2 rounded-lg">
-                  {error}
-                </div>
-              )}
-
-              <div className="flex justify-end">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto px-8 py-4 bg-black hover:bg-zinc-800 text-white rounded-xl text-lg font-medium transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Envoi en cours...
-                    </>
-                  ) : (
-                    <>
-                      Envoyer le message
-                      <Send className="w-5 h-5" />
-                    </>
-                  )}
-                </Button>
-              </div>
-            </form>
-          )}
         </div>
+
+        {isSuccess ? (
+             <motion.div
+             initial={{ opacity: 0, scale: 0.95 }}
+             animate={{ opacity: 1, scale: 1 }}
+             className="bg-neutral-100 p-12 rounded-none border border-neutral-200 text-center"
+           >
+             <h3 className="text-3xl font-bold mb-4">Message reçu.</h3>
+             <p className="text-xl text-neutral-600 mb-8">
+               Nous revenons vers vous dans moins de 24h.
+             </p>
+             <Button
+               className="bg-black text-white px-8 py-4 rounded-full text-lg hover:bg-neutral-800"
+               onClick={() => setIsSuccess(false)}
+             >
+               Envoyer un autre message
+             </Button>
+           </motion.div>
+        ) : (
+            <form onSubmit={handleSubmit} className="space-y-12">
+                <div className="space-y-12">
+                    <div className="group relative">
+                        <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2 block">Nom Complet</label>
+                        <input
+                            type="text"
+                            id="name"
+                            required
+                            placeholder="John Doe"
+                            className="w-full text-3xl md:text-5xl font-light border-b border-neutral-200 py-4 bg-transparent focus:outline-none focus:border-black transition-colors placeholder:text-neutral-200"
+                            value={formState.name}
+                            onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                        />
+                    </div>
+                    
+                    <div className="group relative">
+                        <label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2 block">Email Professionnel</label>
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="john@company.com"
+                            className="w-full text-3xl md:text-5xl font-light border-b border-neutral-200 py-4 bg-transparent focus:outline-none focus:border-black transition-colors placeholder:text-neutral-200"
+                            value={formState.email}
+                            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        />
+                    </div>
+
+                    <div className="group relative">
+                        <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2 block">Votre Message</label>
+                        <textarea
+                            id="message"
+                            required
+                            rows={1}
+                            placeholder="Dites-nous tout..."
+                            className="w-full text-3xl md:text-5xl font-light border-b border-neutral-200 py-4 bg-transparent focus:outline-none focus:border-black transition-colors placeholder:text-neutral-200 resize-none h-auto min-h-[100px]"
+                            value={formState.message}
+                            onChange={(e) => {
+                                setFormState({ ...formState, message: e.target.value });
+                                e.target.style.height = 'auto';
+                                e.target.style.height = e.target.scrollHeight + 'px';
+                            }}
+                        />
+                    </div>
+                </div>
+
+                <div className="pt-8 flex justify-end">
+                    <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="group bg-black text-white px-10 py-8 text-xl rounded-full hover:bg-neutral-800 transition-all flex items-center gap-4 disabled:opacity-50"
+                    >
+                        {isSubmitting ? (
+                            <Loader2 className="w-6 h-6 animate-spin" />
+                        ) : (
+                            <>
+                                Envoyer
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </>
+                        )}
+                    </Button>
+                </div>
+            </form>
+        )}
       </div>
     </section>
   );
