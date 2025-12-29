@@ -48,7 +48,7 @@ export function Portfolio() {
             Nos réalisations.
           </h2>
           <p className="text-neutral-400 text-sm md:text-base max-w-sm mt-4 md:mt-0 font-mono">
-            Une sélection de projets conçus pour la performance et l'impact visuel.
+            Une sélection de projets conçus pour la performance et l&apos;impact visuel.
           </p>
         </div>
 

@@ -107,7 +107,7 @@ export function Pricing() {
         
         <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-2 text-neutral-500 text-sm md:text-base">
             <Minus className="w-8 h-px bg-neutral-800" />
-            <p>Besoin d'une configuration spécifique ?</p>
+            <p>Besoin d&apos;une configuration spécifique ?</p>
             <Link href="https://calendly.com/contact-9secondes/30min" className="text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-all">
                 Contactez-nous pour du sur-mesure.
             </Link>
