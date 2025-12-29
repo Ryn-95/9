@@ -34,6 +34,7 @@ const plans = [
 ];
 
 export function Pricing() {
+  // Force redeploy - Update pricing display
   return (
     <section id="pricing" className="py-32 px-6 bg-black text-white selection:bg-white selection:text-black relative overflow-hidden">
        {/* Background noise/grain if available globally, otherwise simple black */}
