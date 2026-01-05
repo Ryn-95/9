@@ -8,6 +8,18 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.thum.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

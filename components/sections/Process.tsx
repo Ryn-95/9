@@ -94,10 +94,10 @@ const Card = ({ i, title, description, number, color, visual, progress, range, t
     const scale = useTransform(progress, range, [1, targetScale]);
     
     return (
-        <div ref={container} className="h-auto min-h-[60vh] md:h-[80vh] flex items-center justify-center sticky top-[10vh] md:top-[10vh]">
+        <div ref={container} className="h-auto min-h-[60vh] md:h-[80vh] flex items-center justify-center sticky top-28 md:top-[10vh]">
             <motion.div 
                 style={{ scale, top: `calc(-5vh + ${i * 25}px)` }} 
-                className={`relative flex flex-col md:flex-row justify-between w-full min-h-[500px] md:h-[600px] rounded-[32px] md:rounded-[40px] p-6 md:p-16 origin-top ${color} shadow-2xl overflow-hidden`}
+                className={`relative flex flex-col md:flex-row justify-between w-full min-h-[400px] md:h-[600px] rounded-[32px] md:rounded-[40px] p-6 md:p-16 origin-top ${color} shadow-2xl overflow-hidden`}
             >
                 <div className="flex flex-col justify-between h-full relative z-10 max-w-md gap-8 md:gap-0">
                     <div>

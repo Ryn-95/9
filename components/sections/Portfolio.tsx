@@ -8,32 +8,39 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Sottozero",
-    category: "Galerie d'Art",
-    description: "Refonte complète de l'expérience digitale.",
+    title: "Machine à Conversion",
+    category: "Location & Événementiel",
+    description: "Transformer le trafic en réservations automatiques.",
     image: "https://images.unsplash.com/photo-1545989253-02cc26577f88?q=80&w=2940&auto=format&fit=crop",
-    link: "https://sottozero-gallery.vercel.app/"
+    link: "https://kashootloc.fr/"
   },
   {
-    title: "Archin",
-    category: "Architecture",
-    description: "Plateforme minimaliste pour architectes.",
+    title: "Autorité Immédiate",
+    category: "E-commerce de Luxe",
+    description: "Imposer une image de marque incontournable dès la première seconde.",
+    image: "https://images.unsplash.com/photo-1545989253-02cc26577f88?q=80&w=2940&auto=format&fit=crop",
+    link: "https://waqt-luxury.fr/"
+  },
+  {
+    title: "Système d'Acquisition",
+    category: "Booking & Services",
+    description: "Automatiser la prise de rendez-vous et filtrer les prospects qualifiés.",
     image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=2940&auto=format&fit=crop",
-    link: "https://archin-demo.vercel.app/"
+    link: "https://www.kashootmariage.fr/"
   },
   {
-    title: "Kroma",
-    category: "E-commerce",
-    description: "Boutique immersive streetwear.",
+    title: "Design Persuasif",
+    category: "Coaching & Bien-être",
+    description: "Une vitrine qui convertit les visiteurs en clients fidèles.",
     image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2940&auto=format&fit=crop",
-    link: "#"
+    link: "https://forme-body-concept.vercel.app/"
   },
   {
-    title: "Nexus",
-    category: "SaaS",
-    description: "Dashboard fintech futuriste.",
+    title: "Crédibilité Corporative",
+    category: "BTP & Services",
+    description: "Rassurer les grands comptes avec une présence digitale irréprochable.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
-    link: "#"
+    link: "https://www.gregaonecompany.fr/"
   }
 ];
 
