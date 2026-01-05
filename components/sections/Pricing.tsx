@@ -61,7 +61,7 @@ export function Pricing() {
             Abonnements.
           </motion.h2>
           <p className="text-xl md:text-2xl text-neutral-400 max-w-sm mt-8 md:mt-0 font-light">
-            Une force de frappe digitale, sans l'investissement initial.
+            Une force de frappe digitale, sans l&apos;investissement initial.
           </p>
         </div>
 
