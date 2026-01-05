@@ -6,30 +6,41 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    name: "Essentiel",
-    price: "2490",
-    description: "L'élégance minimaliste pour démarrer.",
+    name: "Lancement",
+    price: "45",
+    description: "L'essentiel pour exister en ligne.",
     features: [
-      "Site Vitrine (5 pages)",
-      "Design Premium & Responsive",
-      "SEO Technique de base",
-      "Formulaire de contact",
-      "Intégration CMS simple",
+      "Site Vitrine (3 pages)",
+      "Hébergement Inclus",
+      "Maintenance Technique",
+      "Modifications mineures",
+      "Support par Email",
     ],
   },
   {
-    name: "Signature",
-    price: "4990",
-    description: "L'expérience complète pour les marques ambitieuses.",
+    name: "Croissance",
+    price: "69",
+    description: "Accélérez votre développement.",
     features: [
-      "Site E-commerce ou Complexe",
-      "Animations & Interactions fluides",
-      "SEO Avancé & Performance",
-      "CMS Personnalisé (Admin)",
-      "Support prioritaire 24/7",
-      "Analytics & Dashboard",
+      "Site Vitrine (5 pages)",
+      "Optimisation SEO Locale",
+      "Blog ou Actualités",
+      "Modifications mensuelles",
+      "Support Prioritaire",
     ],
     highlight: true,
+  },
+  {
+    name: "Autorité",
+    price: "99",
+    description: "Dominez votre marché.",
+    features: [
+      "Site Complet ou E-commerce",
+      "Stratégie de Conversion",
+      "Analytics Avancés",
+      "Mises à jour illimitées",
+      "Support Dédié 24/7",
+    ],
   },
 ];
 
@@ -47,14 +58,14 @@ export function Pricing() {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl font-bold tracking-tighter"
           >
-            Tarifs.
+            Abonnements.
           </motion.h2>
           <p className="text-xl md:text-2xl text-neutral-400 max-w-sm mt-8 md:mt-0 font-light">
-            Des investissements clairs pour des résultats tangibles.
+            Une force de frappe digitale, sans l'investissement initial.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -62,21 +73,22 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative p-8 md:p-16 flex flex-col justify-between min-h-[600px] group transition-colors duration-500 hover:bg-neutral-900 ${plan.highlight ? 'bg-neutral-900/50' : 'bg-black'}`}
+              className={`relative p-8 md:p-12 flex flex-col justify-between min-h-[600px] group transition-colors duration-500 hover:bg-neutral-900 ${plan.highlight ? 'bg-neutral-900/50' : 'bg-black'}`}
             >
               <div>
                 <div className="flex justify-between items-start mb-12">
-                   <h3 className="text-3xl font-light tracking-wide uppercase">{plan.name}</h3>
+                   <h3 className="text-2xl font-light tracking-wide uppercase">{plan.name}</h3>
                    {plan.highlight && (
                        <span className="px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white rounded-full">
-                           Recommandé
+                           Populaire
                        </span>
                    )}
                 </div>
                 
                 <div className="mb-12">
-                  <div className="flex items-start">
-                    <span className="text-6xl md:text-7xl font-bold tracking-tighter">{plan.price}€</span>
+                  <div className="flex items-baseline">
+                    <span className="text-6xl font-bold tracking-tighter">{plan.price}€</span>
+                    <span className="text-xl text-neutral-500 ml-2">/mois</span>
                   </div>
                   <p className="mt-4 text-neutral-500 text-lg font-light border-l border-white/20 pl-4">
                     {plan.description}
@@ -87,7 +99,7 @@ export function Pricing() {
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-4 text-neutral-300 group-hover:text-white transition-colors">
                       <span className="w-1.5 h-1.5 bg-neutral-600 rounded-full group-hover:bg-white transition-colors" />
-                      <span className="text-lg font-light">{feature}</span>
+                      <span className="text-base font-light">{feature}</span>
                     </li>
                   ))}
                 </ul>

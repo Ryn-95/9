@@ -52,10 +52,10 @@ export function Portfolio() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 pb-8 border-b border-white/10">
           <h2 className="text-4xl md:text-6xl font-light tracking-tight">
-            Nos réalisations.
+            Systèmes Déployés.
           </h2>
           <p className="text-neutral-400 text-sm md:text-base max-w-sm mt-4 md:mt-0 font-mono">
-            Une sélection de projets conçus pour la performance et l&apos;impact visuel.
+            Des machines à conversion actives qui génèrent du chiffre d&apos;affaires quotidiennement.
           </p>
         </div>
 
