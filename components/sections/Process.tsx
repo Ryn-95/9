@@ -240,7 +240,7 @@ function FinanceVisual() {
                         <div className="w-2 h-2 bg-white rounded-full" />
                         <div className="w-2 h-2 bg-white rounded-full" />
                     </div>
-                    <div className="text-white font-mono text-xl tracking-widest">49 €/mois</div>
+                    <div className="text-white font-mono text-xl tracking-widest">45 €/mois</div>
                 </div>
             </div>
 
