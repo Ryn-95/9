@@ -18,6 +18,9 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "9 - Agence Digitale",
   description: "Nous créons des produits numériques qui aident les entreprises à croître et à réussir dans le monde moderne.",
+  verification: {
+    google: "VbhW6P5P0bl0ZeTVzvt2qVd0xCk8vu2VlE0UIhjarOA",
+  },
 };
 
 import { Cursor } from "@/components/ui/Cursor";
